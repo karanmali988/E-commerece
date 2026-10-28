@@ -1,0 +1,474 @@
+/*-----------------------------------*\
+  #extras.css - login popup, wishlist panel, checkout form,
+  compare bar + table, small demo labels
+  (used on index.html and product.html)
+\*-----------------------------------*/
+
+/* ---------- Login / sign-up popup (auth.js) ---------- */
+.modal .modal-content { max-width: 400px; }
+
+.auth { padding: 40px 30px 30px; }
+
+.auth-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid var(--cultured);
+}
+.auth-tab {
+  flex: 1;
+  padding: 10px 0;
+  font-size: var(--fs-7);
+  font-weight: var(--weight-600, 600);
+  color: var(--sonic-silver);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.auth-tab.active { color: var(--eerie-black); border-bottom-color: var(--salmon-pink); }
+
+.auth-title { color: var(--onyx); font-size: var(--fs-2); font-weight: 600; margin-bottom: 6px; text-align: center; }
+.auth-desc { color: var(--sonic-silver); font-size: var(--fs-7); line-height: 1.6; text-align: center; margin-bottom: 18px; }
+
+.auth-field { display: block; text-align: left; margin-bottom: 12px; font-size: var(--fs-8); color: var(--onyx); font-weight: 500; }
+.auth-field input {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 10px 14px;
+  font-size: var(--fs-7);
+  border: 1px solid var(--cultured);
+  border-radius: var(--border-radius-sm);
+}
+.auth-field input:focus { outline: none; border-color: var(--salmon-pink); }
+
+.auth-error { color: var(--bittersweet, #ff6b6b); font-size: var(--fs-8); min-height: 18px; margin-bottom: 8px; text-align: left; }
+
+.auth-submit {
+  width: 100%;
+  background: var(--eerie-black);
+  color: var(--white);
+  font-size: var(--fs-7);
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 11px 15px;
+  border-radius: var(--border-radius-sm);
+  transition: 0.25s ease;
+}
+.auth-submit:hover { background: var(--salmon-pink); }
+
+.auth-skip { display: block; margin: 14px auto 0; font-size: var(--fs-8); color: var(--sonic-silver); text-decoration: underline; }
+.auth-skip:hover { color: var(--eerie-black); }
+.auth-note { margin-top: 14px; font-size: var(--fs-9); color: var(--sonic-silver); text-align: center; line-height: 1.5; }
+
+.auth-account { text-align: center; }
+.auth-account ion-icon { font-size: 54px; color: var(--salmon-pink); }
+.auth-account p { color: var(--sonic-silver); font-size: var(--fs-7); margin-bottom: 18px; word-break: break-all; }
+
+/* header user button when someone is logged in */
+.is-logged-in { color: var(--salmon-pink); }
+
+/* ---------- "Demo notification" label inside the purchase toast ---------- */
+.toast-demo { margin-top: 4px; font-size: var(--fs-10); color: var(--sonic-silver); font-style: italic; }
+
+/* ---------- Wishlist panel + checkout (cart.js) ---------- */
+.wish-add, .wish-view {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: var(--eerie-black);
+  color: var(--white);
+  transition: 0.25s ease;
+}
+.wish-add:hover, .wish-view:hover { background: var(--salmon-pink); }
+
+.cart-line { display: flex; justify-content: space-between; font-size: 0.875rem; color: var(--sonic-silver); margin-bottom: 8px; }
+.cart-line.total { color: var(--eerie-black); font-weight: 600; font-size: 1rem; margin-bottom: 14px; }
+.cart-line.total strong { font-size: 1.125rem; }
+.cart-demo-note { font-size: 0.75rem; color: var(--sonic-silver); text-align: center; margin: 0 0 12px; line-height: 1.5; }
+
+.co-form { padding: 6px 0 14px; }
+.co-back { font-size: 0.813rem; color: var(--sonic-silver); margin-bottom: 8px; }
+.co-back:hover { color: var(--eerie-black); }
+.co-form h3 { font-size: 1rem; color: var(--eerie-black); margin-bottom: 12px; }
+.co-form label { display: block; font-size: 0.75rem; font-weight: 500; color: var(--onyx); margin-bottom: 10px; }
+.co-form input, .co-form textarea {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 9px 12px;
+  font: inherit;
+  font-size: 0.875rem;
+  border: 1px solid var(--cultured);
+  border-radius: 5px;
+  resize: none;
+}
+.co-form input:focus, .co-form textarea:focus { outline: none; border-color: var(--salmon-pink); }
+.co-summary { border-top: 1px solid var(--cultured); margin-top: 14px; padding-top: 10px; }
+.co-summary p { display: flex; justify-content: space-between; gap: 10px; font-size: 0.75rem; color: var(--sonic-silver); margin-bottom: 6px; }
+
+.co-done { text-align: center; padding: 50px 10px; }
+.co-done ion-icon { font-size: 64px; color: #3cb371; }
+.co-done h3 { margin: 10px 0; color: var(--eerie-black); }
+.co-done p { color: var(--sonic-silver); font-size: 0.875rem; line-height: 1.6; }
+
+/* heart / compare buttons on product cards when switched on */
+.btn-action.active { background: var(--salmon-pink); color: var(--white); }
+
+/* ---------- Compare (compare.js) ---------- */
+.cmp-bar {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  transform: translateY(30px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--eerie-black);
+  color: var(--white);
+  padding: 10px 14px 10px 20px;
+  border-radius: 30px;
+  font-size: 0.875rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  z-index: 39;   /* under the cart panel (40+) */
+  max-width: calc(100% - 24px);
+}
+.cmp-bar.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.cmp-bar button { font-size: 0.813rem; font-weight: 600; padding: 7px 16px; border-radius: 20px; }
+.cmp-go { background: var(--salmon-pink); color: var(--white); }
+.cmp-go:disabled { opacity: 0.45; cursor: not-allowed; }
+.cmp-clear { color: var(--white); text-decoration: underline; }
+
+.cmp-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsla(0, 0%, 0%, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.25s ease;
+  z-index: 62;
+  padding: 16px;
+}
+.cmp-modal.open { opacity: 1; visibility: visible; }
+.cmp-box { position: relative; background: var(--white); border-radius: 10px; max-width: 860px; width: 100%; max-height: 90vh; overflow: auto; padding: 24px; }
+.cmp-box h2 { font-size: 1.125rem; margin-bottom: 14px; color: var(--eerie-black); }
+.cmp-close { position: absolute; top: 14px; right: 14px; font-size: 24px; display: flex; color: var(--eerie-black); }
+.cmp-close:hover { color: var(--salmon-pink); }
+.cmp-table { width: 100%; border-collapse: collapse; font-size: 0.813rem; }
+.cmp-table th, .cmp-table td { padding: 10px; border-bottom: 1px solid var(--cultured); text-align: left; vertical-align: top; }
+.cmp-table th { color: var(--sonic-silver); font-weight: 500; width: 110px; }
+.cmp-table img { width: 110px; height: 110px; object-fit: cover; border-radius: 8px; }
+.cmp-table a { color: var(--eerie-black); font-weight: 500; }
+.cmp-table a:hover { color: var(--salmon-pink); }
+.cmp-remove { color: var(--bittersweet, #ff6b6b); font-size: 0.75rem; }
+.cmp-remove:hover { text-decoration: underline; }
+.cmp-hint { color: var(--sonic-silver); font-size: 0.875rem; padding: 20px 0; }
+
+@media (max-width: 600px) {
+  .cmp-bar { bottom: 80px; right: 12px; }   /* sit above the mobile bottom menu */
+  .cmp-table img { width: 70px; height: 70px; }
+  .cmp-table th { width: 70px; }
+}
+
+
+/* ==========================================================
+   Sort + price bar, "Load more", recently viewed (shop.js)
+   ========================================================== */
+.shop-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 22px;
+  padding: 12px 14px;
+  border: 1px solid var(--cultured);
+  border-radius: var(--border-radius-md);
+}
+.tb-field { display: flex; flex-direction: column; gap: 4px; font-size: var(--fs-8); font-weight: 500; color: var(--onyx); }
+.tb-field select,
+.tb-price input {
+  padding: 8px 10px;
+  font: inherit;
+  font-size: var(--fs-7);
+  color: var(--onyx);
+  background: var(--white);
+  border: 1px solid var(--cultured);
+  border-radius: var(--border-radius-sm);
+}
+.tb-field select:focus, .tb-price input:focus { outline: none; border-color: var(--salmon-pink); }
+.tb-price { display: flex; align-items: center; gap: 8px; font-weight: 400; }
+.tb-price input { width: 112px; }
+.tb-clear { align-self: center; font-size: var(--fs-8); color: var(--bittersweet); text-decoration: underline; }
+.tb-clear[hidden], .load-more-wrap[hidden], .recent-box[hidden] { display: none; }
+.tb-count { align-self: center; margin-left: auto; font-size: var(--fs-8); color: var(--sonic-silver); }
+
+.load-more-wrap { margin: 28px 0 8px; }
+.load-more-btn {
+  margin: 0 auto;
+  padding: 11px 30px;
+  border: 1px solid var(--eerie-black);
+  border-radius: 25px;
+  color: var(--eerie-black);
+  font-size: var(--fs-7);
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+.load-more-btn:hover { background: var(--eerie-black); color: var(--white); }
+
+.recent-box { margin-top: 40px; }
+
+/* ==========================================================
+   Reviews on the product page (product.js)
+   ========================================================== */
+.pd-reviews { margin-top: 40px; }
+.rv-top-row { display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: start; }
+.rv-summary { text-align: center; padding: 22px 14px; border: 1px solid var(--cultured); border-radius: var(--border-radius-md); }
+.rv-avg strong { font-size: 2.2rem; color: var(--eerie-black); }
+.rv-avg { color: var(--sonic-silver); font-size: var(--fs-7); }
+.rv-count, .rv-empty { color: var(--sonic-silver); font-size: var(--fs-8); line-height: 1.6; margin-top: 4px; }
+.rv-stars-display { color: #f5a623; letter-spacing: 2px; font-size: 1.1rem; }
+
+.rv-form { padding: 18px; border: 1px solid var(--cultured); border-radius: var(--border-radius-md); }
+.rv-form h3 { font-size: 1rem; color: var(--eerie-black); margin-bottom: 8px; }
+.rv-form label { display: block; margin-bottom: 10px; font-size: var(--fs-9); font-weight: 500; color: var(--onyx); }
+.rv-form input, .rv-form textarea {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 9px 12px;
+  font: inherit;
+  font-size: var(--fs-7);
+  color: var(--onyx);
+  background: var(--white);
+  border: 1px solid var(--cultured);
+  border-radius: var(--border-radius-sm);
+  resize: vertical;
+}
+.rv-form input:focus, .rv-form textarea:focus { outline: none; border-color: var(--salmon-pink); }
+.rv-form .pd-btn { max-width: 220px; }
+.rv-note { margin-top: 8px; font-size: var(--fs-10); color: var(--sonic-silver); }
+
+.rv-pick { display: flex; gap: 2px; margin-bottom: 10px; }
+.rv-pick-star { display: block; font-size: 30px; line-height: 1; color: var(--spanish-gray); transition: 0.15s ease; }
+.rv-pick-star:hover, .rv-pick-star.on { color: #f5a623; }
+
+.rv-list { margin-top: 18px; }
+.rv-item { padding: 16px 0; border-bottom: 1px solid var(--cultured); }
+.rv-item-top { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin-bottom: 6px; font-size: var(--fs-7); color: var(--eerie-black); }
+.rv-item-top time { margin-left: auto; font-size: var(--fs-9); color: var(--sonic-silver); }
+.rv-item .rv-stars-display { font-size: 0.9rem; }
+.rv-text { font-size: var(--fs-7); color: var(--onyx); line-height: 1.6; white-space: pre-line; word-break: break-word; }
+.rv-del { margin-top: 6px; font-size: var(--fs-9); color: var(--bittersweet); }
+.rv-del:hover { text-decoration: underline; }
+.rv-link { margin-left: 8px; font-size: var(--fs-8); color: var(--sonic-silver); }
+.rv-link:hover { text-decoration: underline; }
+
+@media (max-width: 700px) {
+  .rv-top-row { grid-template-columns: 1fr; }
+  .tb-count { margin-left: 0; width: 100%; }
+}
+
+/* ==========================================================
+   Dark mode (theme.js sets data-theme="dark" on <html>)
+   The site's colours are CSS variables, so swapping them
+   re-colours almost everything at once.
+   ========================================================== */
+.theme-toggle { display: flex; align-items: center; gap: 6px; font-size: var(--fs-8); color: var(--sonic-silver); text-transform: uppercase; transition: var(--transition-timing); }
+.theme-toggle:hover { color: var(--eerie-black); }
+.theme-toggle ion-icon { font-size: 16px; }
+.theme-toggle-mobile { margin-left: auto; margin-right: 14px; }
+
+[data-theme="dark"] {
+  color-scheme: dark;                        /* dark scrollbars + form controls */
+  --white: hsl(222, 16%, 11%);               /* page + cards */
+  --cultured: hsl(222, 12%, 21%);            /* borders + soft backgrounds */
+  --eerie-black: hsl(0, 0%, 94%);            /* headings, dark buttons (become light) */
+  --onyx: hsl(0, 0%, 84%);
+  --davys-gray: hsl(0, 0%, 75%);
+  --sonic-silver: hsl(0, 0%, 66%);
+  --spanish-gray: hsl(0, 0%, 52%);
+}
+
+[data-theme="dark"] body { background: var(--white); color: var(--onyx); }
+
+/* banners (on pale pictures) and the footer (already dark) keep the light-theme colours */
+[data-theme="dark"] .slider-item,
+[data-theme="dark"] .cta-content,
+[data-theme="dark"] footer {
+  --white: hsl(0, 100%, 100%);
+  --cultured: hsl(0, 0%, 93%);
+  --eerie-black: hsl(0, 0%, 13%);
+  --onyx: hsl(0, 0%, 27%);
+  --davys-gray: hsl(0, 0%, 33%);
+  --sonic-silver: hsl(0, 0%, 47%);
+}
+
+/* a few colours were written directly in the CSS, not as variables */
+[data-theme="dark"] .pd-table th,
+[data-theme="dark"] .pd-footer,
+[data-theme="dark"] .header-social-container .social-link { background: var(--cultured); }
+[data-theme="dark"] .pd-thumb img,
+[data-theme="dark"] .pd-zoom img { background: hsl(0, 0%, 97%); }
+
+
+/* ==========================================================
+   Phone layout (under 480px wide): 2 products per row like a
+   shopping app, and 2 category cards visible at a time.
+   Wider screens keep the original template layout.
+   ========================================================== */
+
+/* phones and tablets have no "hover", so show the heart / view / compare buttons all the time */
+@media (hover: none) {
+  .product-grid .showcase-actions { -webkit-transform: none; -ms-transform: none; transform: none; }
+}
+
+@media (max-width: 479px) {
+
+  /* --- 2 category cards at once (swipe sideways for the rest) --- */
+  .category-item-container { gap: 8px; }
+  .category-item { min-width: calc(50% - 4px); padding: 10px; gap: 8px; }
+  .category-img-box { padding: 6px; flex-shrink: 0; }
+  .category-img-box img { width: 26px; height: 26px; }
+  .category-content-flex { flex-direction: column; align-items: flex-start; gap: 2px; margin-bottom: 4px; }
+  .category-item-title { font-size: var(--fs-10); line-height: 1.25; }
+  .category-item-amount { font-size: var(--fs-11); }
+  .category-btn { font-size: var(--fs-10); }
+
+  /* --- 2 products per row, compact cards --- */
+  .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .product-grid .showcase { border-radius: var(--border-radius-sm); }
+  .product-grid .showcase-content { padding: 8px 8px 0; }
+  .product-grid .showcase-category { font-size: var(--fs-11); margin-bottom: 3px; }
+  .product-grid .showcase-title {
+    font-size: var(--fs-9);
+    letter-spacing: 0;
+    line-height: 1.35;
+    margin-bottom: 5px;
+    min-height: 2.7em;              /* keeps rows even when a name is short */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;          /* long names stop after 2 lines */
+    line-clamp: 2;
+    overflow: hidden;
+  }
+  .product-grid .showcase-rating { font-size: 12px; margin-bottom: 4px; }
+  .product-grid .price-box { flex-wrap: wrap; align-items: baseline; gap: 2px 6px; font-size: var(--fs-8); margin-bottom: 8px; }
+  .product-grid del { font-size: var(--fs-10); }
+  .product-grid .showcase-actions { top: 6px; right: 6px; font-size: 15px; }
+  .product-grid .btn-action { padding: 4px; margin-bottom: 4px; }
+  .product-grid .btn-action[data-action="view"] { display: none; }   /* tapping the picture or name already opens the product */
+  .product-grid .showcase-badge { font-size: var(--fs-11); }
+
+  /* the sort / price bar: fields side by side, compact */
+  .shop-toolbar { gap: 10px; padding: 10px; }
+  .tb-price input { width: 100%; min-width: 0; }
+  .tb-price { width: 100%; }
+  .tb-field { flex: 1 1 100%; }
+}
+
+
+/* ==========================================================
+   TEXT LOGO: "Shopping Spree" (colors follow light / dark mode)
+   ========================================================== */
+.header-logo { display: block; text-align: center; }
+.logo-text {
+  display: inline-block;
+  font-size: 1.625rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  color: var(--eerie-black);
+  white-space: nowrap;
+}
+.logo-text span { color: var(--salmon-pink); margin-left: 5px; }
+
+
+/* ==========================================================
+   ALWAYS-VISIBLE SCROLLBARS (phones and tablets only)
+   New Arrivals, Trending, Top Rated and the category row
+   (Dress & frock, Winter wear ...). On phones the scroll handle is
+   always shown so people can see the row can be swiped.
+   On laptops (1024px and wider) nothing changes: the handle
+   still appears only when the mouse is over it.
+   ========================================================== */
+@media (max-width: 1023px) {
+  .product-minimal .showcase-wrapper,
+  .category-item-container {
+    padding-bottom: 10px;
+  }
+
+  .product-minimal .showcase-wrapper::-webkit-scrollbar,
+  .category-item-container::-webkit-scrollbar {
+    height: 12px;
+  }
+
+  .product-minimal .showcase-wrapper::-webkit-scrollbar-track,
+  .category-item-container::-webkit-scrollbar-track {
+    background: var(--cultured);
+    border-radius: 20px;
+  }
+
+  .product-minimal .showcase-wrapper::-webkit-scrollbar-thumb,
+  .category-item-container::-webkit-scrollbar-thumb,
+  .product-minimal .showcase-wrapper:hover::-webkit-scrollbar-thumb,
+  .category-item-container:hover::-webkit-scrollbar-thumb {
+    background: var(--spanish-gray);
+    border: 2px solid var(--cultured);
+    border-radius: 20px;
+  }
+
+  .product-minimal .showcase-wrapper::-webkit-scrollbar-thumb:hover,
+  .category-item-container::-webkit-scrollbar-thumb:hover {
+    background: var(--sonic-silver);
+  }
+
+  /* Firefox uses different settings */
+  @supports not selector(::-webkit-scrollbar) {
+    .product-minimal .showcase-wrapper,
+    .category-item-container {
+      scrollbar-width: auto;
+      scrollbar-color: var(--spanish-gray) var(--cultured);
+    }
+  }
+}
+
+
+/* ==========================================================
+   LAPTOP (1024px and wider): New Arrivals, Trending, Top Rated
+   The scroll handle appears when the mouse is anywhere over the
+   list (over any of its 4 products), not only over the bar.
+   script.js adds the class "is-hovered" while the mouse is over the
+   list. (The plain :hover trick does not repaint a custom scrollbar
+   in Chrome, which is why the handle only showed on the bar itself.)
+   To change the colors, edit the two hsl(...) values below
+   (last number = lightness: higher is lighter).
+   ========================================================== */
+@media (min-width: 1024px) {
+  .product-minimal .showcase-wrapper.is-hovered::-webkit-scrollbar-thumb {
+    background: hsl(0, 0%, 72%);
+  }
+
+  .product-minimal .showcase-wrapper::-webkit-scrollbar-thumb:hover {
+    background: hsl(0, 0%, 58%);
+  }
+
+  /* dark mode: a darker grey so it is not too bright */
+  [data-theme="dark"] .product-minimal .showcase-wrapper.is-hovered::-webkit-scrollbar-thumb {
+    background: hsl(0, 0%, 38%);
+  }
+
+  [data-theme="dark"] .product-minimal .showcase-wrapper::-webkit-scrollbar-thumb:hover {
+    background: hsl(0, 0%, 52%);
+  }
+
+  /* Firefox */
+  @supports not selector(::-webkit-scrollbar) {
+    .product-minimal .showcase-wrapper:hover { scrollbar-color: hsl(0, 0%, 72%) transparent; }
+    .product-minimal .showcase-wrapper { scrollbar-color: transparent transparent; }
+  }
+}

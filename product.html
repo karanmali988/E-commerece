@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product - Shopping Spree</title>
+  <meta name="description" content="Product details page of the Shopping Spree demo store.">
+
+  <link rel="icon" href="./assets/images/logo/favicon.svg" type="image/svg+xml">
+
+  <!-- base styles + this page's own styles + cart panel styles -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/product.css">
+  <link rel="stylesheet" href="./assets/css/cart.css">
+  <link rel="stylesheet" href="./assets/css/extras.css">
+  <script src="./assets/js/migrate.js"></script>
+  <script src="./assets/js/theme.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="pd-header">
+    <div class="pd-header-inner">
+
+      <a href="./index.html" class="pd-logo" aria-label="Shopping Spree home">
+        <span class="logo-text">Shopping<span>Spree</span></span>
+      </a>
+
+      <a href="./index.html" class="pd-back">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+        <span>Continue shopping</span>
+      </a>
+
+      <div class="pd-actions">
+        <button class="pd-icon-btn" data-theme-toggle>
+          <ion-icon name="moon-outline"></ion-icon>
+        </button>
+
+        <button class="pd-icon-btn" aria-label="Account" data-open-account>
+          <ion-icon name="person-outline"></ion-icon>
+        </button>
+
+        <button class="pd-icon-btn" aria-label="Open wishlist" data-open-wish>
+          <ion-icon name="heart-outline"></ion-icon>
+          <span class="pd-count" data-wish-count>0</span>
+        </button>
+
+        <button class="pd-icon-btn" aria-label="Open cart" data-open-cart>
+          <ion-icon name="bag-handle-outline"></ion-icon>
+          <span class="pd-count" data-cart-count>0</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- PRODUCT DETAILS (filled in by assets/js/product.js) -->
+  <main class="pd-main" id="pd-root">
+    <p class="pd-loading">Loading product...</p>
+  </main>
+
+  <footer class="pd-footer">
+    <p>Copyright &copy; <a href="./index.html">Shopping Spree</a> all rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript (order matters) -->
+  <script src="./assets/js/products.js"></script>
+  <script src="./assets/js/cart-logic.js"></script>
+  <script src="./assets/js/card.js"></script>
+  <script src="./assets/js/cart.js"></script>
+  <script src="./assets/js/compare.js"></script>
+  <script src="./assets/js/auth.js"></script>
+  <script src="./assets/js/product.js"></script>
+
+  <!-- Icon library -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

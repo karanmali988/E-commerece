@@ -1,0 +1,9 @@
+{
+  "name": "my-store",
+  "version": "1.0.0",
+  "description": "Shopping Spree demo store (plain HTML, CSS and JavaScript)",
+  "private": true,
+  "scripts": {
+    "test": "node --test"
+  }
+}
